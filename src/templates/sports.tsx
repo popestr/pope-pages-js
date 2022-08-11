@@ -33,7 +33,7 @@ import PageLayout from "../components/page-layout";
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "my-stream-id-1",
+    $id: "sports-stream",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
@@ -41,17 +41,11 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
-      "address",
-      "mainPhone",
       "description",
-      "hours",
-      "slug",
-      "geocodedCoordinate",
-      "services",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
-      entityTypes: ["location"],
+      entityTypes: ["ce_sports"],
     },
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -68,7 +62,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return `location/${document.id.toString()}`;
+  return `sport/${document.id.toString()}`;
 };
 
 /**
@@ -78,7 +72,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
  * a new deploy.
  */
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-  return [`index-old/${document.id.toString()}`];
+  return [`sport-old/${document.id.toString()}`];
 };
 
 /**
@@ -124,18 +118,13 @@ const Location: Template<TemplateRenderProps> = ({
   const {
     _site,
     name,
-    address,
-    openTime,
-    hours,
-    mainPhone,
-    geocodedCoordinate,
-    services,
+    description,
   } = document;
 
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} address={address} openTime={openTime}>
+        <Banner name={name} >
           <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
             <div className="text-black text-base">Visit Us Today!</div>
             <Cta
@@ -148,20 +137,8 @@ const Location: Template<TemplateRenderProps> = ({
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-5 space-y-12">
-                <Contact address={address} phone={mainPhone}></Contact>
-                {services && <List list={services}></List>}
-              </div>
               <div className="col-span-2 pt-5 space-y-10">
-                <div>
-                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
-                </div>
-                {geocodedCoordinate && (
-                  <StaticMap
-                    latitude={geocodedCoordinate.latitude}
-                    longitude={geocodedCoordinate.longitude}
-                  ></StaticMap>
-                )}
+                {description}
               </div>
             </div>
           </div>
