@@ -30,7 +30,7 @@
     "requiredFiles": ["package.json", "package-lock.json", ".npmrc"]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run build"
+    "buildCmd": "npm run build && touch sites-config/redirects.csv && echo \"/home.html,/index.html\" >> sites-config/redirects.csv"
   },
   "livePreview": {
     "serveSetupCmd": ":"
