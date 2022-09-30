@@ -33,7 +33,7 @@ import PageLayout from "../components/page-layout";
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "sports-stream-v4",
+    $id: "sports-stream-v5",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
