@@ -1,7 +1,7 @@
 {
   "responseHeaders": [
     {
-      "pathPattern": "**/v2",
+      "pathPattern": ".*/v2",
       "headerKey": "joe-custom-header",
       "headerValues": ["joe-custom-value"]
     }
