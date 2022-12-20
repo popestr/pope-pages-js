@@ -62,7 +62,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return `sport/${document.id.toString()}/v3`;
+  return `sport/${document.id.toString()}/v2`;
 };
 
 /**
