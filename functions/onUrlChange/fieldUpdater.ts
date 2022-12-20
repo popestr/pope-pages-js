@@ -12,6 +12,9 @@ export interface WritebackPayload {
 
 // TODO: Once JS config supports FunctionSelector, rename this and reference in feature
 export async function main(data: WritebackPayload) {
+
+  throw "Intentional OnUrlChange Error"
+
   if (!data.entityId || !data.locale) {
     return null;
   }
