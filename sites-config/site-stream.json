@@ -1,0 +1,18 @@
+{
+    "filter": {
+        "entityIds": [
+            "590040966047669245"
+        ]
+    },
+    "fields": [
+        "name",
+        "id",
+        "uid",
+        "description"
+    ],
+    "localization": {
+        "locales": [
+            "en"
+        ]
+    }
+}
