@@ -2,7 +2,7 @@
 
 This repository provides a basic example of how to start developing a React site on the Yext Sites system.
 
-## Getting Started
+## Getting Startedd
 
 ### Prerequisites
 
